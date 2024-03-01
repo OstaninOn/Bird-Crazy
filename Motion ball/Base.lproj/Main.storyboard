@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="StT-cD-SfV">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="01T-zi-tCd">
+            <objects>
+                <navigationController id="StT-cD-SfV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pw0-tc-FsZ">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qq4-dv-hHh" kind="relationship" relationship="rootViewController" id="Vlx-aX-Eso"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1QY-aQ-6z2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2036" y="-90"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="8gI-oH-rEA">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" id="Qq4-dv-hHh" customClass="LoadingViewController" customModule="Motion_ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MGX-Ys-ZTR">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1693220688_pushinka-top-p-kartinka-nebo-s-oblakami-dlya-detei-instag-2" translatesAutoresizingMaskIntoConstraints="NO" id="2iI-9u-IlI">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBO-Zn-p2b">
+                                <rect key="frame" x="326" y="96.666666666666686" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Qmg-hI-nfM"/>
+                                    <constraint firstAttribute="width" constant="200" id="dTb-QA-pMx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RsG-CI-EOC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UBO-Zn-p2b" firstAttribute="centerY" secondItem="MGX-Ys-ZTR" secondAttribute="centerY" id="NFh-RW-op2"/>
+                            <constraint firstItem="UBO-Zn-p2b" firstAttribute="centerX" secondItem="MGX-Ys-ZTR" secondAttribute="centerX" id="yVl-cP-Qmt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qBG-7Y-l2H"/>
+                    <connections>
+                        <outlet property="loadingView" destination="UBO-Zn-p2b" id="9nt-ox-old"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5HL-Ge-IzD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1266.9014084507044" y="-90.839694656488547"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="3iK-qg-Pph">
+            <objects>
+                <viewController storyboardIdentifier="TitleViewController" id="1E9-1h-qFK" customClass="TitleViewController" customModule="Motion_ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xhT-qB-7LF">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMe-j3-P7r">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                            </view>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="HrX-lJ-XOV">
+                                <rect key="frame" x="543" y="96.666666666666686" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cce-0x-1ee"/>
+                                    <constraint firstAttribute="height" constant="200" id="nuJ-EE-vWW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qoi-yo-Ck2"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XMe-j3-P7r" secondAttribute="trailing" id="L9L-dT-jGY"/>
+                            <constraint firstItem="Qoi-yo-Ck2" firstAttribute="trailing" secondItem="HrX-lJ-XOV" secondAttribute="trailing" constant="50" id="RF6-93-vJf"/>
+                            <constraint firstItem="XMe-j3-P7r" firstAttribute="centerY" secondItem="xhT-qB-7LF" secondAttribute="centerY" id="mZX-ZP-xFB"/>
+                            <constraint firstItem="XMe-j3-P7r" firstAttribute="leading" secondItem="xhT-qB-7LF" secondAttribute="leading" id="mv0-gu-r2Z"/>
+                            <constraint firstItem="XMe-j3-P7r" firstAttribute="top" secondItem="Qoi-yo-Ck2" secondAttribute="top" id="r4i-Yf-qcl"/>
+                            <constraint firstItem="XMe-j3-P7r" firstAttribute="centerX" secondItem="xhT-qB-7LF" secondAttribute="centerX" id="vL8-Lr-l6l"/>
+                            <constraint firstItem="HrX-lJ-XOV" firstAttribute="centerY" secondItem="Qoi-yo-Ck2" secondAttribute="centerY" constant="10.666666666666686" id="wFH-UU-mOt"/>
+                            <constraint firstAttribute="bottom" secondItem="XMe-j3-P7r" secondAttribute="bottom" id="wvl-mS-o4g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OhM-UT-PJf"/>
+                    <connections>
+                        <outlet property="fonTitleAnimate" destination="XMe-j3-P7r" id="NyX-OT-Hky"/>
+                        <outlet property="playView" destination="HrX-lJ-XOV" id="qBn-uz-gAM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3Z-uN-Jem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-480.28169014084511" y="-90.839694656488547"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="Motion_ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3d-u6-ACW">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjZ-fu-rGT">
+                                        <rect key="frame" x="48" y="758" width="94" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebd-nL-t9R">
+                                        <rect key="frame" x="715" y="244" width="89" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEu-qB-St1">
+                                        <rect key="frame" x="696" y="219" width="77" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY0-3Q-i8c">
+                                        <rect key="frame" x="715" y="8" width="137" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atD-Xu-wTA">
+                                        <rect key="frame" x="639" y="202" width="49" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Map-1v-zQP">
+                                        <rect key="frame" x="346" y="17" width="131" height="97"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMm-zk-0fF">
+                                        <rect key="frame" x="303" y="745" width="82" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q63-4o-hfW">
+                                        <rect key="frame" x="251" y="773" width="71" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                </subviews>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-Tz-XMN">
+                                <rect key="frame" x="-28" y="184" width="908" height="25"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-n5-tcJ">
+                                        <rect key="frame" x="394" y="-52" width="119" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-J6-FbP">
+                                        <rect key="frame" x="386" y="-76" width="135" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gyw-kS-aE1">
+                                <rect key="frame" x="369" y="146" width="114" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gp7-Vv-Ve0"/>
+                    <connections>
+                        <outlet property="TreeViewFirst" destination="cV1-n5-tcJ" id="veT-FL-UmL"/>
+                        <outlet property="animeView" destination="Gyw-kS-aE1" id="oef-xq-hlm"/>
+                        <outlet property="birdFourView" destination="Map-1v-zQP" id="Z2A-LF-bde"/>
+                        <outlet property="birdSecondView" destination="uY0-3Q-i8c" id="JXj-4Q-hzQ"/>
+                        <outlet property="birdThierdView" destination="vjZ-fu-rGT" id="qZp-rl-JdG"/>
+                        <outlet property="birdViewFirst" destination="ebd-nL-t9R" id="8GU-zg-tv6"/>
+                        <outlet property="fluViewFood" destination="PEu-qB-St1" id="OcP-yv-Xfa"/>
+                        <outlet property="fluViewFoodFirst" destination="atD-Xu-wTA" id="HSH-1b-mHq"/>
+                        <outlet property="fluViewFoodSecond" destination="hMm-zk-0fF" id="BZx-Db-eST"/>
+                        <outlet property="fonAnimeView" destination="V3d-u6-ACW" id="o8k-TT-zbQ"/>
+                        <outlet property="grassView" destination="bQM-Tz-XMN" id="OgP-lY-haU"/>
+                        <outlet property="treeView" destination="n0r-J6-FbP" id="JmO-2H-9vC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255.63380281690141" y="-90.839694656488547"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1693220688_pushinka-top-p-kartinka-nebo-s-oblakami-dlya-detei-instag-2" width="2000" height="1333"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
