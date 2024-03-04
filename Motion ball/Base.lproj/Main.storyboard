@@ -106,7 +106,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="Motion_ball" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -118,24 +118,24 @@
                                         <rect key="frame" x="48" y="758" width="94" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY0-3Q-i8c">
+                                        <rect key="frame" x="551" y="244" width="137" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
                                     <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebd-nL-t9R">
                                         <rect key="frame" x="715" y="244" width="89" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Map-1v-zQP">
+                                        <rect key="frame" x="127" y="19" width="131" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
                                     <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEu-qB-St1">
                                         <rect key="frame" x="696" y="219" width="77" height="78"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY0-3Q-i8c">
-                                        <rect key="frame" x="715" y="8" width="137" height="119"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </view>
                                     <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atD-Xu-wTA">
                                         <rect key="frame" x="639" y="202" width="49" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Map-1v-zQP">
-                                        <rect key="frame" x="346" y="17" width="131" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
                                     <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMm-zk-0fF">
@@ -146,29 +146,66 @@
                                         <rect key="frame" x="251" y="773" width="71" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
+                                    <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-Tz-XMN">
+                                        <rect key="frame" x="-28" y="368" width="908" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-n5-tcJ">
+                                                <rect key="frame" x="394" y="-52" width="119" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </view>
+                                            <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-J6-FbP">
+                                                <rect key="frame" x="386" y="-76" width="135" height="176"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </view>
+                                        </subviews>
+                                    </view>
                                 </subviews>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-Tz-XMN">
-                                <rect key="frame" x="-28" y="184" width="908" height="25"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-n5-tcJ">
-                                        <rect key="frame" x="394" y="-52" width="119" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-J6-FbP">
-                                        <rect key="frame" x="386" y="-76" width="135" height="176"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </view>
-                                </subviews>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-RN-t5P">
+                                <rect key="frame" x="713" y="10" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Dd4-FP-KXD"/>
+                                    <constraint firstAttribute="height" constant="70" id="eH5-qu-6v1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.28627452250000002" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIL-qW-Imw">
+                                <rect key="frame" x="633" y="10" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="kbP-ny-ILe"/>
+                                    <constraint firstAttribute="height" constant="70" id="mKj-uQ-c0g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.28627452250000002" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E2-Zk-wnX">
+                                <rect key="frame" x="301" y="46.666666666666657" width="250" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="cWG-Gf-3aC"/>
+                                    <constraint firstAttribute="width" constant="250" id="ffO-KX-yl3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="241"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gyw-kS-aE1">
-                                <rect key="frame" x="369" y="146" width="114" height="100"/>
+                                <rect key="frame" x="159" y="52" width="115" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wIL-qW-Imw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3Tf-6D-nMA"/>
+                            <constraint firstItem="oDU-RN-t5P" firstAttribute="leading" secondItem="wIL-qW-Imw" secondAttribute="trailing" constant="10" id="Ff1-K6-lOd"/>
+                            <constraint firstItem="4E2-Zk-wnX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JS2-Pd-saj"/>
+                            <constraint firstItem="4E2-Zk-wnX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SMP-J5-nfF"/>
+                            <constraint firstItem="oDU-RN-t5P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="aLK-S1-S5y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oDU-RN-t5P" secondAttribute="trailing" constant="10" id="cxD-hA-1lq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gp7-Vv-Ve0"/>
                     <connections>
@@ -183,6 +220,9 @@
                         <outlet property="fluViewFoodSecond" destination="hMm-zk-0fF" id="BZx-Db-eST"/>
                         <outlet property="fonAnimeView" destination="V3d-u6-ACW" id="o8k-TT-zbQ"/>
                         <outlet property="grassView" destination="bQM-Tz-XMN" id="OgP-lY-haU"/>
+                        <outlet property="rezultLebel" destination="oDU-RN-t5P" id="cfF-Ug-cBg"/>
+                        <outlet property="scoreLebel" destination="wIL-qW-Imw" id="iO3-OY-8s4"/>
+                        <outlet property="timerLabel" destination="4E2-Zk-wnX" id="w0E-y2-N72"/>
                         <outlet property="treeView" destination="n0r-J6-FbP" id="JmO-2H-9vC"/>
                     </connections>
                 </viewController>
