@@ -20,11 +20,12 @@ class GameViewController: UIViewController {
     private lazy var imageViewSecond = UIImageView(image: image)
     private lazy var imageViewThird = UIImageView(image: image)
     
+    @IBOutlet weak var rezultLebel: UILabel!
+    @IBOutlet weak var scoreLebel: UILabel!
     
-    var isGaming = true
+    @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var grassView: UIView!
-    
     
     @IBOutlet weak var birdViewFirst: UIView!
     @IBOutlet weak var birdThierdView: UIView!
@@ -49,11 +50,20 @@ class GameViewController: UIViewController {
 
     var lastX = 0.0
     var lastY = 0.0
+    var score = 0
+    var rezult = 0
+    
+    var isGaming = true
+    
+    var timers = Timer()
+    var time = 4 {
+        didSet {
+            timerLabel.text = "\(time)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         view.addSubview(birdViewFirst)
         birdViewFirst.frame = CGRect(x: 900, y: 100, width: 70, height: 70)
@@ -100,12 +110,20 @@ class GameViewController: UIViewController {
         motionManager.startDeviceMotionUpdates()
         
         timer = Timer.scheduledTimer(timeInterval: 0.0083333333, target: self, selector: #selector(GameViewController.update), userInfo: nil, repeats: true)
-        //fonAnimationView()
         
-    
+        
+        timers = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+        
+        rezult = StoreManager.shared.scores.first?.score ?? 0
     }
 
-    
+    @objc func tick() {
+        time -= 1
+        if time == 0 {
+            timers.invalidate()
+            timerLabel.text = nil
+        }
+    }
     
     
     
@@ -118,7 +136,7 @@ class GameViewController: UIViewController {
         let animeteTrView = AnimationView(name: "tr")
         animeteTrView.contentMode = .scaleToFill
         animeteTrView.frame = self.grassView.bounds
-        animeteTrView.animationSpeed = 0.3
+        animeteTrView.animationSpeed = 0.5
         animeteTrView.loopMode = .loop
         animeteTrView.play()
         self.grassView.addSubview(animeteTrView)
@@ -182,7 +200,7 @@ class GameViewController: UIViewController {
         
         
         let animeteTreeView = AnimationView(name: "Tree")
-        animeteTreeView.contentMode = .scaleAspectFit
+        animeteTreeView.contentMode = .scaleAspectFill
         animeteTreeView.frame = self.treeView.bounds
         animeteTreeView.loopMode = .loop
         animeteTreeView.animationSpeed = 0.3
@@ -190,7 +208,7 @@ class GameViewController: UIViewController {
         self.treeView.addSubview(animeteTreeView)
         
         let animeteTreeViewFirst = AnimationView(name: "Tree")
-        animeteTreeViewFirst.contentMode = .scaleAspectFit
+        animeteTreeViewFirst.contentMode = .scaleAspectFill
         animeteTreeViewFirst.frame = self.TreeViewFirst.bounds
         animeteTreeViewFirst.loopMode = .loop
         animeteTreeViewFirst.animationSpeed = 0.3
@@ -267,11 +285,13 @@ class GameViewController: UIViewController {
             .curveLinear, .repeat], animations: {
                 self.treeView.frame.origin.x +=
                 self.view.frame.height - 2000
+                print("tree2")
             })
         UIView.animate(withDuration: 18, delay: 15, options: [
             .curveLinear, .repeat], animations: {
                 self.TreeViewFirst.frame.origin.x +=
                 self.view.frame.height - 2000
+                print("tree1")
             })
         
         
@@ -292,13 +312,74 @@ class GameViewController: UIViewController {
 //                self.imageViewThird.frame.origin.x +=
 //                self.view.frame.height - 1900
 //            })
+     
+        intersects()
         intersectsFoodFly()
         intersectsFirstFoodFly()
 //        intersectsSecondFoodFly()
 //        intersectsThirdFoodFly()
 //        intersectsFourFoodFly()
         intersectsZeroFoodFly()
+        
+        rezultLebel.text = String(rezult)
+        scoreLebel.text = String(score)
+        
     }
+    
+    func saveRecord() {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YYYY HH:mm"
+        let currentDateString = dateFormatter.string(from: Date())
+        
+        let userName = StoreManager.shared.name
+        let newScore = ScoreModel(name: userName, score: score, date: currentDateString)
+        
+        var scores = StoreManager.shared.scores
+        scores.append(newScore)
+        scores.sort(by: >)
+        StoreManager.shared.scores = scores
+        }
+    
+
+    
+    func intersects() {
+        guard isGaming else { return }
+        if checkIntersect(animeView, birdViewFirst)
+            || checkIntersect(animeView, birdSecondView) || checkIntersect(animeView, birdThierdView)  || checkIntersect(animeView, birdFourView) || checkIntersect(animeView, treeView) || checkIntersect(animeView, TreeViewFirst) {
+            print("GAME OVER")
+            
+            fluViewFood.layer.removeAllAnimations()
+            fluViewFoodFirst.layer.removeAllAnimations()
+            fluViewFoodSecond.layer.removeAllAnimations()
+            imageViewThird.layer.removeAllAnimations()
+            treeView.layer.removeAllAnimations()
+            TreeViewFirst.layer.removeAllAnimations()
+            birdViewFirst.layer.removeAllAnimations()
+            birdSecondView.layer.removeAllAnimations()
+            birdThierdView.layer.removeAllAnimations()
+            birdFourView.layer.removeAllAnimations()
+            fonAnimeView.layer.removeAllAnimations()
+            animeView.layer.removeAllAnimations()
+
+            isGaming = false
+            saveRecord()
+            
+            let alert = UIAlertController(title: "GAME OVER", message: "saving", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .destructive, handler: { (action: UIAlertAction!) in
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+            alert.addAction(okButton)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.intersects()
+        }
+    }
+    
+    
+  
     
     
     func intersectsFoodFly() {
@@ -306,6 +387,10 @@ class GameViewController: UIViewController {
         if checkIntersect(animeView, fluViewFood){
             print("food111")
             isGaming = true
+            score += 1
+            scoreLebel.text = String(score)
+            rezultLebel.text = String(rezult)
+            
             fluViewFood.frame = CGRect(x: 900, y: 150, width: 20, height: 20)
             UIView.animate(withDuration: 13, delay: 5, options: [
                 .curveLinear, .repeat], animations: {
@@ -334,6 +419,10 @@ class GameViewController: UIViewController {
         if checkIntersect(animeView, fluViewFoodSecond){
             print("food222")
             isGaming = true
+            score += 1
+            scoreLebel.text = String(score)
+            rezultLebel.text = String(rezult)
+            
             fluViewFoodSecond.frame = CGRect(x: 900, y: 300, width: 20, height: 20)
             UIView.animate(withDuration: 28, delay: 12, options: [
                 .curveLinear, .repeat], animations: {
@@ -361,6 +450,9 @@ class GameViewController: UIViewController {
         if checkIntersect(animeView, fluViewFoodFirst){
             print("food333")
             isGaming = true
+            score += 1
+            scoreLebel.text = String(score)
+            rezultLebel.text = String(rezult)
             fluViewFoodFirst.frame = CGRect(x: 900, y: 30, width: 20, height: 20)
             UIView.animate(withDuration: 20, delay: 21, options: [
                 .curveLinear, .repeat], animations: {

@@ -11,7 +11,7 @@ import RiveRuntime
 
 class TitleViewController: UIViewController {
     
-    var simpleVM = RiveViewModel(fileName: "pigeons_on_my_button-2")
+    var simpleVM = RiveViewModel(fileName: "pigeons_button")
     
     @IBOutlet weak var playView: UIView!
     
@@ -63,7 +63,7 @@ class TitleViewController: UIViewController {
    
    
     @objc func playGame() {
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loading), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 2.1, target: self, selector: #selector(loading), userInfo: nil, repeats: false)
 //        let storuboard = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = storuboard.instantiateViewController(withIdentifier: "GameViewController")
 //        vc.modalTransitionStyle = .crossDissolve
